@@ -1,22 +1,17 @@
-let mouseDown = false;
+let selecting = false;
 
-window.addEventListener("mousedown", e => {
-    mouseDown = true;
-    showSelectionDiv(new Point(e.pageX, e.pageY));
-    
-});
-
-window.addEventListener("mousemove", e => {
-    if (mouseDown) {
-        update(new Point(e.pageX, e.pageY)); 
+window.addEventListener("click", e => {
+    selecting = !selecting;
+    if (selecting) {
+         showSelectionDiv(new Point(e.pageX, e.pageY));   
     }
 });
 
-window.addEventListener("mouseup", e => {
-    mouseDown = false;
-    // console.log("up")
+window.addEventListener("mousemove", e => {
+    if (selecting) {
+        update(new Point(e.pageX, e.pageY)); 
+    }
 });
-
 
 let selectionDiv;
 
