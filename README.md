@@ -3,6 +3,6 @@ Select links
 
 **_WORK IN PROGRESS_**
 
-Currently script only adds fixed squares when clicked.
+Currently draws a box for the selection by pressing mouse down and dragging.
 
 ![](link-selection1.png)
